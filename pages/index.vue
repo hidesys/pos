@@ -53,6 +53,14 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import commodityList from '../static/commodities.json'
 
+const speak = function(text: string): void {
+  const utterance = new window.SpeechSynthesisUtterance(text)
+  utterance.lang = 'ja-JP'
+  utterance.rate = 1.0
+  utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.lang == 'ja-JP') || null
+  window.speechSynthesis.speak(utterance)
+}
+
 @Component
 export default class Human extends Vue {
   newCode: string = ''
@@ -61,8 +69,17 @@ export default class Human extends Vue {
 
   addCommodity(): void {
     this.newCommodity = commodityList.find(com => String(com.barcode) == this.newCode)
-    if (this.newCommodity) { this.commodities.push(this.newCommodity) }
+    if (this.newCommodity) {
+      this.commodities.push(this.newCommodity)
+      this.speak()
+    }
     this.newCode = ''
+  }
+
+  speak(): void {
+    let text = `${this.newCommodity.name} ${this.newCommodity.grams} グラム、${this.newCommodity.price}円。`
+    text += '商品をかごに入れてください。'
+    speak(text)
   }
 
   get sumPrice(): number {
