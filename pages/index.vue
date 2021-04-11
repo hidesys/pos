@@ -44,7 +44,7 @@
       </div>
     </div>
     <button type="button" class="btn btn-primary btn-block order-button">
-      🛒お会計
+      お会計
     </button>
   </div>
 </template>
