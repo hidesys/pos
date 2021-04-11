@@ -1,0 +1,132 @@
+[
+ {
+   "prepend": 2000,
+   "code": 10,
+   "check": 7,
+   "barcode": 2000107,
+   "name": "肩ロース",
+   "unit": 238,
+   "grams": 400,
+   "price": 952
+ },
+ {
+   "prepend": 2000,
+   "code": 11,
+   "check": 4,
+   "barcode": 2000114,
+   "name": "肩バラ肉",
+   "unit": 198,
+   "grams": 400,
+   "price": 792
+ },
+ {
+   "prepend": 2000,
+   "code": 12,
+   "check": 1,
+   "barcode": 2000121,
+   "name": "スネ肉",
+   "unit": 138,
+   "grams": 450,
+   "price": 621
+ },
+ {
+   "prepend": 2000,
+   "code": 13,
+   "check": 8,
+   "barcode": 2000138,
+   "name": "ネック肉",
+   "unit": 138,
+   "grams": 200,
+   "price": 276
+ },
+ {
+   "prepend": 2000,
+   "code": 14,
+   "check": 5,
+   "barcode": 2000145,
+   "name": "ロース肉",
+   "unit": 258,
+   "grams": 500,
+   "price": 1290
+ },
+ {
+   "prepend": 2000,
+   "code": 15,
+   "check": 2,
+   "barcode": 2000152,
+   "name": "中バラ肉",
+   "unit": 198,
+   "grams": 700,
+   "price": 1386
+ },
+ {
+   "prepend": 2000,
+   "code": 16,
+   "check": 9,
+   "barcode": 2000169,
+   "name": "外バラ肉",
+   "unit": 198,
+   "grams": 600,
+   "price": 1188
+ },
+ {
+   "prepend": 2000,
+   "code": 17,
+   "check": 6,
+   "barcode": 2000176,
+   "name": "ヒレ肉",
+   "unit": 266,
+   "grams": 300,
+   "price": 798
+ },
+ {
+   "prepend": 2000,
+   "code": 18,
+   "check": 3,
+   "barcode": 2000183,
+   "name": "モモ肉",
+   "unit": 178,
+   "grams": 800,
+   "price": 1424
+ },
+ {
+   "prepend": 2000,
+   "code": 19,
+   "check": 0,
+   "barcode": 2000190,
+   "name": "外モモ肉",
+   "unit": 178,
+   "grams": 700,
+   "price": 1246
+ },
+ {
+   "prepend": 2000,
+   "code": 20,
+   "check": 6,
+   "barcode": 2000206,
+   "name": "豚足",
+   "unit": 158,
+   "grams": 500,
+   "price": 790
+ },
+ {
+   "prepend": 2000,
+   "code": 21,
+   "check": 3,
+   "barcode": 2000213,
+   "name": "ミミ",
+   "unit": 198,
+   "grams": 100,
+   "price": 198
+ },
+ {
+   "prepend": 2000,
+   "code": 22,
+   "check": 0,
+   "barcode": 2000220,
+   "name": "タン",
+   "unit": 198,
+   "grams": 100,
+   "price": 198
+ }
+]
