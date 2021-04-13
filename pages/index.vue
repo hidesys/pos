@@ -78,7 +78,7 @@ export default class Human extends Vue {
 
   speak(): void {
     let text = `${this.newCommodity.name} ${this.newCommodity.grams} グラム、${this.newCommodity.price}円。`
-    text += '商品をかごに入れてください。'
+    text += ''
     speak(text)
   }
 
