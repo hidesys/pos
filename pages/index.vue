@@ -1,6 +1,13 @@
 <template>
   <div class="p-4 all">
-    <Scanning :commodities="commodities" :sumPrice="sumPrice" @addCommodity="addCommodity" />
+    <Start
+      v-if="phase == 'start'"
+      @start="phase = 'scanning'" />
+    <Scanning
+      v-if="phase == 'scanning'"
+      :commodities="commodities"
+      :sumPrice="sumPrice"
+      @addCommodity="addCommodity" />
   </div>
 </template>
 
@@ -10,9 +17,10 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class PageIndex extends Vue {
+  phase: 'start' | 'scanning' = 'start'
   commodities: any[] = []
 
-  addCommodity(newCommodity): void {
+  addCommodity(newCommodity: any): void {
     this.commodities.push(newCommodity)
   }
 
@@ -27,5 +35,6 @@ export default class PageIndex extends Vue {
 .all {
   background-color: lightgray;
   font-size: 3vh;
+  height: 100vh;
 }
 </style>
