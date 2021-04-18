@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <div class="labels">
+    <div class="labels row m-0">
       <PrintLabel
         v-for="commodity in commodities"
         :commodity="commodity"
@@ -27,7 +27,6 @@ export default class Labels extends Vue {
   width: 210mm;
 }
 .labels {
-  display: flex;
   width: 100%;
 }
 @media screen {

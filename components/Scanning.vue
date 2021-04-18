@@ -82,7 +82,7 @@ export default class Scanning extends Vue {
   }
 
   speak(): void {
-    let text = `${this.newCommodity.name} ${this.newCommodity.grams} グラム、${this.newCommodity.price}円。`
+    let text = `${this.newCommodity.speak}、${this.newCommodity.price}円。`
     text += ''
     speak(text)
   }
