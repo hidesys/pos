@@ -24,7 +24,7 @@
             </div>
           </div>
           <form @submit.prevent="addCommodity">
-            <input v-model="newCode" class="w-100 border-0 text-right" />
+            <input type="tel" v-model="newCode" class="w-100 border-0 text-right" />
           </form>
         </div>
       </div>

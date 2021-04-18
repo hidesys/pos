@@ -13,7 +13,7 @@
       v-if="phase == 'payment'"
       :commodities="commodities"
       :sumPrice="sumPrice"
-      @finish="phase = 'start'"
+      @finish="phase = 'start'; commodities = []"
       @back="phase = 'scanning'"/>
   </div>
 </template>

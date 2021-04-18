@@ -29,7 +29,7 @@
         <button
           type="button"
           class="btn btn-primary btn-block btn-lg-shadow h-100"
-          @click="$emit('finish')">
+          @click="thanks()">
           お支払確定
         </button>
       </div>
@@ -50,9 +50,14 @@ export default class Payment extends Vue {
   @Prop({ default: 0 })
   sumPrice!: number
 
-  speak(): void {
+  mounted(): void {
     const text = `合計金額は ${this.sumPrice}円です。よろしければ、お支払い確定ボタンを押してください。`
     speak(text)
+  }
+
+  thanks(): void {
+    speak('ご利用、ありがとうございました。')
+    this.$emit('finish')
   }
 }
 
