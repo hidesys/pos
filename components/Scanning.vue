@@ -4,8 +4,8 @@
       <div class="col-8 w-100">
         <div class="content new-commodity d-flex flex-column">
           <div class="flex-grow-1 valign-middle-wrapper">
-            <div v-if="newCommodity" class="text-center valign-middle">
-              <div class="name">
+            <div v-if="newCommodity" class="text-center valign-middle w-100">
+              <div class="name w-100">
                 {{ newCommodity.name }}
                 {{ newCommodity.grams }}g
               </div>
@@ -32,13 +32,13 @@
         <div class="content d-flex flex-column">
           <div class="flex-grow-1">
             <div v-for="commodity in commodities" class="row border-bottom p-2">
-              <div class="col-7">{{ commodity.name }}</div>
-              <div class="col-5 text-right">{{ commodity.price }} 円</div>
+              <div class="col-8 pr-0" style="font-size: 2.5vh;">{{ commodity.name }}</div>
+              <div class="col-4 pl-0 text-right">{{ commodity.price }} 円</div>
             </div>
           </div>
           <div class="row p-2">
             <div class="col-7">合計</div>
-            <div class="col-5 text-right">{{ sumPrice }} 円</div>
+            <div class="col-5 pl-0 text-right">{{ sumPrice }} 円</div>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default class Scanning extends Vue {
   newCommodity: any = null
 
   addCommodity(): void {
-    this.newCommodity = commodityList.find(com => String(com.barcode) == this.newCode)
+    this.newCommodity = commodityList.find(com => this.newCode.includes(String(com.barcode)))
     if (this.newCommodity) {
       this.$emit('addCommodity', this.newCommodity)
       this.speak()

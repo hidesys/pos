@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="main pb-4">
-      <div class="content valign-middle-wrapper">
-        <div class="valign-middle">
+      <div class="content h-100 valign-middle-wrapper">
+        <div class="valign-middle text-center w-100">
           <div class="count">
             購入点数： {{ commodities.length }} 点
           </div>
@@ -21,7 +21,7 @@
         <button
           type="button"
           class="btn btn-outline-primary btn-block btn-lg-shadow bg-white h-100"
-          @click="$emit('finish')">
+          @click="$emit('back')">
           戻る
         </button>
       </div>
