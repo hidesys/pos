@@ -1,0 +1,16 @@
+.btn-lg-shadow {
+  border-radius: 1rem;
+  font-size: 6vh;
+  border-bottom: solid 8px #627295;
+}
+
+.valign-middle-wrapper {
+  position: relative;
+}
+.valign-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}

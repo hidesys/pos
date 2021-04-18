@@ -7,7 +7,13 @@
       v-if="phase == 'scanning'"
       :commodities="commodities"
       :sumPrice="sumPrice"
-      @addCommodity="addCommodity" />
+      @addCommodity="addCommodity"
+      @collected="phase = 'payment'"/>
+    <Payment
+      v-if="phase == 'payment'"
+      :commodities="commodities"
+      :sumPrice="sumPrice"
+      @finish="phase = 'start'"/>
   </div>
 </template>
 
@@ -17,7 +23,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class PageIndex extends Vue {
-  phase: 'start' | 'scanning' = 'start'
+  phase: 'start' | 'scanning' | 'payment' = 'start'
   commodities: any[] = []
 
   addCommodity(newCommodity: any): void {

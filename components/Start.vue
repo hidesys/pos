@@ -1,6 +1,6 @@
 <template>
   <div class="h-100">
-    <button type="button" class="btn btn-primary btn-block h-100" @click="start">
+    <button type="button" class="btn btn-primary btn-block h-100 btn-lg-shadow" @click="start">
       お会計を始める
     </button>
   </div>
@@ -28,9 +28,5 @@ export default class Start extends Vue {
 </script>
 
 <style scoped>
-button {
-  border-radius: 1rem;
-  font-size: 6vh;
-  border-bottom: solid 8px #627295;
-}
+@import "./_common";
 </style>

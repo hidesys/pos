@@ -43,7 +43,10 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary btn-block order-button">
+    <button
+      type="button"
+      class="btn btn-primary btn-block btn-lg-shadow order-button"
+      @click="$emit('collected')">
       お支払
     </button>
   </div>
@@ -52,14 +55,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import commodityList from '../static/commodities.json'
-
-const speak = function(text: string): void {
-  const utterance = new window.SpeechSynthesisUtterance(text)
-  utterance.lang = 'ja-JP'
-  utterance.rate = 1.0
-  utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.lang == 'ja-JP') || null
-  window.speechSynthesis.speak(utterance)
-}
+import speak from './_speak'
 
 @Component
 export default class Scanning extends Vue {
@@ -67,7 +63,7 @@ export default class Scanning extends Vue {
   commodities!: any[]
 
   @Prop({ default: 0 })
-  sumPrice!: number;
+  sumPrice!: number
 
   newCode: string = ''
   newCommodity: any = null
@@ -82,8 +78,7 @@ export default class Scanning extends Vue {
   }
 
   speak(): void {
-    let text = `${this.newCommodity.speak}、${this.newCommodity.price}円。`
-    text += ''
+    const text = `${this.newCommodity.speak}、${this.newCommodity.price}円。`
     speak(text)
   }
 }
@@ -91,6 +86,8 @@ export default class Scanning extends Vue {
 </script>
 
 <style scoped>
+@import "./_common";
+
 .all {
   background-color: lightgray;
   font-size: 3vh;
@@ -107,11 +104,6 @@ export default class Scanning extends Vue {
   padding: 1rem;
   height: 100%;
 }
-.order-button {
-  border-radius: 1rem;
-  font-size: 6vh;
-  border-bottom: solid 8px #627295;
-}
 input.border-0:focus {
   outline: 0;
 }
@@ -120,15 +112,5 @@ input.border-0:focus {
 }
 .new-commodity .price {
   font-size: 6vh;
-}
-.valign-middle-wrapper {
-  position: relative;
-}
-.valign-middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 </style>
